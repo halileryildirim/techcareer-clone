@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techcareer Clone</title>
+    <style>
+        body{
+            margin: 0;
+            font-family: Roboto, sans-serif;
+        }
+        button {
+            font-size: 16px;
+            padding: 8px;
+            background-color: rgb(0, 198, 0);
+            color: white;
+            border-radius: 4px;
+            font-weight: bold;
+            border: none;
+        }
+        button:hover {
+            cursor: pointer;
+        }
+        header{
+            text-align: center;
+            box-shadow: 4px 1px 2px;
+            margin-bottom: 2px;
+            height: 60px;
+            padding-top: 12px;
+        }
+        #header-left {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        #login-button, #search-input {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 20px;
+        }
+        .links {
+            display: inline-block;
+            margin-left:20px;
+        }
+        .links > a {
+            display: inline-block;
+            margin-right: 10px;
+            text-decoration: none;
+            color: gray;
+        }
+        .image-slider {
+            text-align: center;
+            background: linear-gradient(180deg, rgb(246,248,255) 70%, rgb(41,51,73) 30%);
+            padding: 64px 0; 
+        }
+        .image-slider img {
+            display: inline-block;
+            vertical-align: center;
+        }
+        .sponsor-slider {
+            height: 100px;
+            line-height: 100px;
+            background-color: rgb(240,240,240);
+            text-align: center;
+            padding: auto;
+        }
+        .sponsor-slider > span {
+            display: inline-block;
+            vertical-align: middle;
+            padding: 0 48px;
+        }
+        .events {
+            background-color: rgb(246,246,246);
+            text-align: center;
+            padding-bottom: 16px;
+        }
+        #event-header {
+            margin-top: 0;
+            padding-top: 8px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        #event-body {
+            line-height: 2em;
+        }
+        #event{
+            max-width: 300px;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 40px;
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid rgb(187, 185, 185);
+        }
+        #event:hover {
+            border-color: black;
+        }
+        #event-tag {
+            display: inline-block;
+            font-size: 0.8125rem;
+            padding: 1px 4px;
+            line-height: 24px;
+            border-radius: 16px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            border: 1px solid black;
+        }
+        #event-signup {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 0;
+        }
+        #signup-deadline {
+            padding: 0;
+            margin: 0;
+            text-align: start;
+            line-height: 24px;
+            font-size: 12px;
+        }
+        .about {
+            padding-left: 20%;
+            text-align: start;
+            padding-top: 36px;
+        }
+        .about div {
+            display: inline-block;
+            max-width: 25%;
+            position: relative;
+            top: 0;
+        }
+        .info {
+            background-color: rgb(239,255,235);
+            padding-left: 20%;
+            padding-bottom: 36px;
+            padding-top: 36px;
+        }
+        .participants {
+            padding-left: 20%;
+            height: 400px;
+            background-color: rgb(246,246,246);
+            margin: 0;
+        }
+        #participant {
+            display: inline-block;
+            max-width: 35%;
+            background-color: white;
+            padding: 24px;
+        }
+        #participant > div {
+            display: inline-block;
+        }
+        .event-types {
+            padding-left: 20%;
+            height: 400px;
+        }
+        #event-type {
+            display: inline-block;
+            max-width: 400px;
+            vertical-align: middle;
+            padding: 8px;
+        }
+        .tech-contact {
+            background-color: rgb(41,51,73);
+            color: white;
+            text-align: center;
+            padding: 48px;
+            height: 300px;
+        }
+        .tech-contact * {
+            vertical-align: middle;
+        }
+        .tech-contact a {
+            color: white;
+        }
+        .contact-details * {
+            display: inline-block;
+        }
+        .footer {
+            padding-left: 17.5%;
+            background-color: rgb(240,240,240);
+        }
+        .footer ul {
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 50px;
+
+        }
+        .footer ul li {
+            padding-top: 24px;
+        }
+        .footer ul li a{
+            text-decoration: none;
+            color: black;
+        }
+        .footer ul {
+            line-height: 18px;
+        }
+        .footer .slogan {
+            display: inline-block;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="header-left">
+            <a href="#" id="logo" style="margin: 0; display: inline-block; font-size: 34px; font-weight: bold; text-decoration: none; color: black; vertical-align: middle;">tech<span style="color: rgb(0, 198, 0);">career</span>.net</a>
+            <label for="search-input">
+                <input id="search-input" type="text" placeholder="Etkinlik, İş İlanı veya Blog Ara" style="min-width: 250px; height: 24px; border-radius: 4px; border: 1px solid gray;">
+            </label>
+            <nav class="links">
+                <a href="#">Etkinlikler</a>
+                <a href="#">İş İlanları</a>
+                <a href="#">Komünite</a>
+                <a href="#">Şirketler</a>
+            </nav>
+        </div>
+        <button id="login-button">Giriş / Üye Ol</button>
+    </header>
+    <div class="image-slider">
+        <img src="https://www.techcareer.net/_next/image?url=https%3A%2F%2Fcdn.gcp.techcareer.net%2F1112_412_3_9c6155da2f%2F1112_412_3_9c6155da2f.png&w=1200&q=100" alt="placeholder image">
+    </div>
+    <div class="sponsor-slider">
+        <button style="border-radius: 50%; width: 50px; height: 50px;"> < </button>
+            <span>Sponsor 1</span>
+            <span>Sponsor 2</span>
+            <span>Sponsor 3</span>
+            <span>Sponsor 4</span>
+            <span>Sponsor 5</span>
+            <span>Sponsor 6</span>
+        <button style="border-radius: 50%; width: 50px; height: 50px;"> > </button>
+    </div>
+    <div class="events">
+        <h1 id="event-header">Başvurunu Bekleyen Etkinlikler</h1>
+        <div id="event-body">
+            <div id="event">
+                <div id="event-content" style="border-bottom-color: black; border-bottom-width: 1px; border-bottom-style: solid;">
+                    <img style="width: 280px; height: 180px;" src="https://wiki.dave.eu/images/4/47/Placeholder.png" alt="event image">
+                    <h2>Etkinlik Başlığı</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit?</p>
+                    <span id="event-tag">Bootcamp</span>
+                    <span id="event-tag">İş Fırsatı</span>
+                </div>
+                <div id="event-signup">
+                    <p id="signup-deadline"><b>SON BAŞVURU:</b><br>Başvuru Tarihi</p>
+                    <button>Başvur</button>
+                </div>
+            </div>
+            <div id="event">
+                <div id="event-content" style="border-bottom-color: black; border-bottom-width: 1px; border-bottom-style: solid;">
+                    <img style="width: 280px; height: 180px;" src="https://wiki.dave.eu/images/4/47/Placeholder.png" alt="event image">
+                    <h2>Etkinlik Başlığı</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit?</p>
+                    <span id="event-tag">Bootcamp</span>
+                    <span id="event-tag">İş Fırsatı</span>
+                </div>
+                <div id="event-signup">
+                    <p id="signup-deadline"><b>SON BAŞVURU:</b><br>Başvuru Tarihi</p>     
+                    <button>Başvur</button>
+                </div>
+            </div>
+            <div id="event">
+                <div id="event-content" style="border-bottom-color: black; border-bottom-width: 1px; border-bottom-style: solid;">
+                    <img style="width: 280px; height: 180px;" src="https://wiki.dave.eu/images/4/47/Placeholder.png" alt="event image">
+                    <h2>Etkinlik Başlığı</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit?</p>
+                    <span id="event-tag">Bootcamp</span>
+                    <span id="event-tag">İş Fırsatı</span>
+                </div>
+                <div id="event-signup" style="margin-bottom: 0;">
+                    <p id="signup-deadline"><b>SON BAŞVURU:</b><br>Başvuru Tarihi</p>                    
+                    <button id="signup-button">Başvur</button>
+                </div>
+            </div>
+        </div>
+        <button id="all-events" style="margin: 16px 0;">Tüm Etkinlikleri Göster</button>
+    </div>
+    <div class="about">
+        <h1>Neden Techcareer.net?</h1>
+        <div id="about-details">
+            <img style="width: 100px; height: 100px;" src="https://www.techcareer.net/assets/images/infobar/why-tcn-icon1.svg" alt="doodle climbing mountain">
+            <h2>Ücretsiz etkinliklere katıl</h2>
+            <p>Yolun başındasın ama en güzel aşamasındasın! Sektörün için gereken tüm becerileri burada öğrenmeye ücretsiz etkinlikler ile başlayacaksın.</p>
+        </div>
+        <div id="about-details">
+            <img style="width: 100px; height: 100px;" src="https://www.techcareer.net/assets/images/infobar/why-tcn-icon2.svg" alt="happy doodle jumping">
+            <h2>Kendini kanıtla</h2>
+            <p>Bootcamp, Hackathon ve Hiring Challenge etkinliklerine katılarak hem becerilerini geliştirecek hem de ödül kazanma fırsatı yakalayacaksın.</p>
+        </div>
+        <div id="about-details">
+            <img style="width: 100px; height: 100px;" src="https://www.techcareer.net/assets/images/infobar/why-tcn-icon3.svg" alt="two doodle agreeing on something">
+            <h2>İş fırsatı yakala</h2>
+            <p>Sektöründe lider teknoloji şirketleriyle tanışacak ve iş fırsatları yakalayacaksın. <br><br></p>
+        </div>
+    </div>
+    <div class="info">
+        <h1>Kariyer Rehberi’yle Geliş</h1>
+        <h2 style="color: rgb(0,194,109);">Yeni teknoloji kariyerini seçmeye hazır mısın?</h2>
+        <p style="max-width: 75%;">Teknoloji alanında kariyer yapmak istiyor ancak hangi pozisyonu seçeceğini veya seçtiğin pozisyonda hangi adımlardan geçmen gerektiğini bilmiyorsan, Kariyer Rehberi ile en doğru yerdesin!</p>
+        <button>Hemen İncele</button>
+    </div>
+    <div class="participants">
+        <h1 style="margin-top: 0; padding-top: 24px;">Bizi Katılımcılarımızdan Dinle</h1>
+        <div id="participant">
+            <img style="width: 110px; height: 110px; position: absolute;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqRe5RLtcE9wU1GauPfoIn98kaT78OOyZ6yi2rSeW6tA&s" alt="placeholder">
+            <div style="margin-left: 120px; overflow-y: auto; max-height: 100px;">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga id, similique tempore autem consequatur velit, necessitatibus aut quidem ratione alias itaque dolores, ipsum consequuntur quae. Hic beatae sunt non corporis? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore minima odio vero quos similique sapiente, repellendus atque dolorum voluptate. Labore blanditiis sunt expedita magnam doloribus! Reprehenderit ratione eligendi delectus minus.</p>
+            </div>
+            <div style="margin-left: 70%;">
+                <p>Katılımcı Adı Soyadı</p>
+                <p>Katılımcı Title</p>
+            </div>
+        </div>
+        <div id="participant">
+            <img style="width: 110px; height: 110px; position: absolute;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqRe5RLtcE9wU1GauPfoIn98kaT78OOyZ6yi2rSeW6tA&s" alt="placeholder">
+            <div style="margin-left: 120px; overflow-y: auto; max-height: 100px; padding-top: 0;">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga id, similique tempore autem consequatur velit, necessitatibus aut quidem ratione alias itaque dolores, ipsum consequuntur quae. Hic beatae sunt non corporis? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore minima odio vero quos similique sapiente, repellendus atque dolorum voluptate. Labore blanditiis sunt expedita magnam doloribus! Reprehenderit ratione eligendi delectus minus.</p>
+            </div>
+            <div style="margin-left: 70%;">
+                <p>Katılımcı Adı Soyadı</p>
+                <p>Katılımcı Title</p>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+    </div>
+    <div class="event-types">
+        <div id="event-type">
+            <img  style="width: 100px; height: 100px;" src="https://www.techcareer.net/assets/images/eventsbar/eventsbar-bootcamp.svg" alt="Bootcamp logo">
+            <h1>Bootcamp</h1>
+            <p style="padding-bottom: 12px;">
+                Bootcamp etkinlikleri, yazılım teknolojileri, veri bilimi, ürün yönetimi gibi teknolojik konularda düzenlenir. Hem eğitim alabilir, hem de o alanda işe başlayabilecek kadar fazla bilgi ve donanım kazanabilirsin.
+            </p>
+            <a href="#" style="color: rgb(0,194,109);">Hemen Başvur</a>
+        </div>
+        <div id="event-type">
+            <img  style="width: 100px; height: 100px;" src="https://www.techcareer.net/assets/images/eventsbar/eventsbar-hackathon.svg" alt="Hackathon logo">
+            <h1>Hackathon</h1>
+            <p style="padding-bottom: 12px;">
+                Hackathon etkinliklerinde takımlar halinde veya bireysel olarak yarışacaksın. Etkinlik için belli bir zaman verilir ve yeni fikirler, yeni dijital ürünler üretmesi, sonra da bunları kodlaması istenir.
+            </p>
+            <a href="#" style="color: rgb(0,194,109);">Hemen Başvur</a>
+        </div>
+        <div id="event-type">
+            <img  style="width: 100px; height: 100px;" src="https://www.techcareer.net/assets/images/eventsbar/eventsbar-hiring.svg" alt="Hiring Challenge logo">
+            <h1>Hiring Challenge</h1>
+            <p style="height: 72px; padding-bottom: 12px;">
+                Hiring Challenge yarışmalarında Android, iOS, algoritma veya kod hatası gibi problemleri belirli bir zaman aralığı içerisinde çözmeye çalışacaksın. Bu yarışmalarda algoritma tasarımına, özgünlüğe ve kod kalitesine göre puan alırsın.
+            </p>
+            <a href="#" style="color: rgb(0,194,109);">Hemen Başvur</a>
+        </div>
+    </div>
+    <div class="tech-contact">
+        <h1>Şirketiniz için Teknoloji yeteneği mi arıyorsunuz?</h1>
+        <h2>Birlikte etkinlik düzenlemek ve size ulaşmamız için şirket e-mail adresinizi girin! 🚀</h2>
+        <label for="company-email">
+            <input style="height: 32px; width: 300px; padding: 12px; font-size: 16px; border: 1px solid gray; border-radius: 4px; vertical-align: middle;" type="email" id="company-email" placeholder="Şirket E-mail Adresiniz">
+            <button style="vertical-align: middle; height: 58px; width: 80px; font-size: 16px;">Gönder</button>
+        </label>
+        <p style="color: rgb(0,194,109);">Tüm soru ve önerileriniz için;</p>
+        <div class="contact-details">
+            <p><a style="text-decoration: none;" href="mailto:hello@techcareer.net">hello@techcareer.net</a></p> 
+            <span style="font-size: 24px;">|</span>
+            <p><a style="text-decoration: none;" href="#">0216 468 76 00</a></p>
+        </div>
+    </div>
+    <div class="footer">
+        <ul style="list-style: none;">
+            <p>TECHCAREER</p>
+            <li><a href="#">Hakkımızda</a></li>
+            <li><a href="#">Etkinlikler</a></li>
+            <li><a href="#">Şirketler İçin</a></li>
+            <li><a href="#">Eğitmen Ol</a></li>
+            <li><a href="#">İş Birliği</a></li>
+            <li><a href="#">İletişim</a></li>
+        </ul>
+
+        <ul style="list-style: none;">
+            <p>BAŞVUR</p>
+            <li><a href="#">Bootcamp</a></li>
+            <li><a href="#">Hackathon</a></li>
+            <li><a href="#">Hiring Challenge</a></li>
+            <li><a href="#">İş İlanları</a></li>
+        </ul>
+        <ul style="list-style: none;">
+            <p>SENİN İÇİN</p>
+            <li><a href="#">Komünite</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Podcast</a></li>
+            <li><a href="#">Kariyer Rehberi</a></li>
+        </ul>
+        <ul style="list-style: none;">
+            <p>SOSYAL MEDYA</p>
+            <li>Twitter / X</li>
+            <li>Instagram</li>
+            <li>LinkedIn</li>
+            <li>Youtube</li>
+            <li>Facebook</li>
+        </ul>
+        <div class="slogan">
+            <h3 style="margin-top: 32px;">tech<span style="color: rgb(0,194,109);">career</span>.net</h3>
+            <p style="font-weight: bold;">Türkiye'nin teknoloji kariyeri platformu</p>
+        </div>
+    </div>
+    <p style="vertical-align: middle; text-align: center; background-color: rgb(240,240,240); margin: 0; padding-bottom: 8px;"> <span style="font-size: 24px; vertical-align: middle;">© </span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus doloribus, corporis incidunt natus voluptatum itaque.</p>
+
+</body>
+</html>
